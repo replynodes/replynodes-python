@@ -1,0 +1,12 @@
+{
+  "generatorName": "python",
+  "outputDirName": "python",
+  "packageName": "replynodes",
+  "projectName": "replynodes",
+  "packageVersion": "0.1.0",
+  "gitUserId": "replynodes",
+  "gitRepoId": "replynodes-python",
+  "repositoryUrl": "https://github.com/replynodes/replynodes-python",
+  "library": "urllib3",
+  "generateSourceCodeOnly": true
+}
