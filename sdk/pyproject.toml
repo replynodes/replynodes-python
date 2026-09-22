@@ -1,0 +1,72 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "replynodes"
+version = "0.1.0"
+description = "Official Python SDK for ReplyNodes, the web context API for software and AI agents."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "ReplyNodes", email = "support@replynodes.com" }]
+requires-python = ">=3.9"
+keywords = [
+  "replynodes",
+  "python-sdk",
+  "ai-agents",
+  "web-context",
+  "web-scraping",
+  "web-scraping-api",
+  "google-search-api",
+  "youtube-api",
+  "reddit-api",
+  "app-store-api",
+  "llm",
+  "mcp",
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Internet :: WWW/HTTP",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+  "Typing :: Typed",
+]
+dependencies = [
+  "urllib3 >= 2.1.0, < 3.0.0",
+  "pydantic >= 2, < 3",
+  "typing-extensions >= 4.7.1",
+  "python-dateutil >= 2.8.2",
+]
+
+[project.optional-dependencies]
+dev = ["pytest >= 8", "build >= 1.2"]
+
+[project.urls]
+Homepage = "https://replynodes.com"
+Documentation = "https://docs.replynodes.com"
+Repository = "https://github.com/replynodes/replynodes-python"
+Issues = "https://github.com/replynodes/replynodes-python/issues"
+
+[tool.setuptools]
+packages = [
+  "replynodes",
+  "replynodes.api",
+  "replynodes.models",
+  "replynodes.dx",
+]
+
+[tool.setuptools.package-dir]
+"" = "generated"
+"replynodes.dx" = "dx"
+
+[tool.pytest.ini_options]
+testpaths = ["test"]
+markers = ["slow: builds a wheel and installs it into a throwaway venv"]
