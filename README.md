@@ -113,7 +113,7 @@ except ReplyNodesTimeoutError:
     print("Request timed out")
 ```
 
-`401` means authentication failed. `402` means payment or account credits are required. Other HTTP errors preserve their status and request ID.
+`401` means authentication failed. Other HTTP errors preserve their status and request ID.
 
 The current OpenAPI schema marks success `meta.request_id` as required, while the backend may omit it; until the schema is corrected, a response missing it raises a `pydantic.ValidationError` instead of returning `request_id=None`. This mirrors a documented gap in the merged TypeScript reference SDK's contract, not new behavior introduced here.
 
@@ -129,7 +129,7 @@ Do not hard-code API keys in source control. Use environment variables or your p
 
 ## Retries and timeouts
 
-The SDK never retries automatically. `Configuration(retries=False)` is set explicitly on every client, overriding `urllib3`'s own default of 3 retries, so a network hiccup never silently repeats a metered/billed GET. `timeout` is a positive number of **seconds** applied per request; a client-side deadline raises `ReplyNodesTimeoutError`. Omit `timeout` to use the platform default (no client-side deadline).
+The SDK never retries automatically. `Configuration(retries=False)` is set explicitly on every client, overriding `urllib3`'s own default of 3 retries, so a network hiccup never silently repeats a GET. `timeout` is a positive number of **seconds** applied per request; a client-side deadline raises `ReplyNodesTimeoutError`. Omit `timeout` to use the platform default (no client-side deadline).
 
 ## Why use the SDK?
 
