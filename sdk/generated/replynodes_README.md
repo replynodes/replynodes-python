@@ -34,10 +34,10 @@ import replynodes
 from replynodes.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.replynodes.com
+# This generated REST client is legacy; configure a verified REST host for the current contract.
 # See configuration.py for a list of all supported configuration parameters.
 configuration = replynodes.Configuration(
-    host = "https://api.replynodes.com"
+    host = "<configured-rest-host>"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -73,7 +73,7 @@ with replynodes.ApiClient(configuration) as api_client:
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://api.replynodes.com*
+All URIs are relative to the configured REST host.
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
